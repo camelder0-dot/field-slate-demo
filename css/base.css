@@ -1,0 +1,63 @@
+/* Field Slate — shared tokens. Square corners everywhere, hairline rules, mono for data. */
+@font-face { font-family: 'Barlow SC'; src: url('../fonts/barlow-sc-400.woff2') format('woff2'); font-weight: 400; font-display: swap; }
+@font-face { font-family: 'Barlow SC'; src: url('../fonts/barlow-sc-500.woff2') format('woff2'); font-weight: 500; font-display: swap; }
+@font-face { font-family: 'Barlow SC'; src: url('../fonts/barlow-sc-600.woff2') format('woff2'); font-weight: 600; font-display: swap; }
+@font-face { font-family: 'Barlow SC'; src: url('../fonts/barlow-sc-700.woff2') format('woff2'); font-weight: 700; font-display: swap; }
+@font-face { font-family: 'JB Mono'; src: url('../fonts/jbmono-400.woff2') format('woff2'); font-weight: 400; font-display: swap; }
+@font-face { font-family: 'JB Mono'; src: url('../fonts/jbmono-500.woff2') format('woff2'); font-weight: 500; font-display: swap; }
+@font-face { font-family: 'JB Mono'; src: url('../fonts/jbmono-700.woff2') format('woff2'); font-weight: 700; font-display: swap; }
+
+:root {
+  --accent: #35E0FF;
+  --bg: #07090C;
+  --bg-2: #0D1117;
+  --bg-3: #141A22;
+  --line: #1F2833;
+  --line-2: #2C3846;
+  --text: #E9EEF3;
+  --text-2: #9AA7B4;
+  --text-3: #5F6C79;
+  --warn: #FFB547;
+  --danger: #FF5A5F;
+  --ok: #3DDC97;
+  --grid: rgba(255, 255, 255, 0.025);
+  --sans: 'Barlow SC', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --mono: 'JB Mono', ui-monospace, 'SF Mono', 'Cascadia Mono', Consolas, monospace;
+  color-scheme: dark;
+}
+:root[data-theme="light"] {
+  --bg: #F4F6F8;
+  --bg-2: #FFFFFF;
+  --bg-3: #EAEEF2;
+  --line: #D9DFE5;
+  --line-2: #C2CBD4;
+  --text: #0B1015;
+  --text-2: #4A5663;
+  --text-3: #7D8995;
+  --grid: rgba(0, 0, 0, 0.035);
+  color-scheme: light;
+}
+
+*, *::before, *::after { box-sizing: border-box; border-radius: 0 !important; }
+html, body { margin: 0; height: 100%; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
+button, input, select, textarea { font: inherit; color: inherit; }
+button { cursor: pointer; }
+[hidden] { display: none !important; }
+
+.mono { font-family: var(--mono); font-variant-numeric: tabular-nums; }
+.label {
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-3);
+}

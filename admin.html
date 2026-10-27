@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Field Slate Control</title>
+  <meta name="theme-color" content="#07090C">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body class="admin">
+  <header class="top">
+    <a class="brand" href="admin.html"><span class="mark"></span>Field Slate</a>
+    <div class="top-event" id="topEvent"></div>
+    <div class="top-r">
+      <span id="connBadge" class="badge"></span>
+      <a class="btn ghost sm" href="./" target="_blank" rel="noopener">Open display ↗</a>
+    </div>
+  </header>
+
+  <nav class="rail" id="rail">
+    <button data-tab="live" class="on"><span class="ix">01</span>Live</button>
+    <button data-tab="schedule"><span class="ix">02</span>Schedule</button>
+    <button data-tab="notes"><span class="ix">03</span>Bands &amp; notes</button>
+    <button data-tab="source"><span class="ix">04</span>Data source</button>
+    <button data-tab="display"><span class="ix">05</span>Display</button>
+    <button data-tab="system"><span class="ix">06</span>Devices &amp; backup</button>
+  </nav>
+
+  <main class="main" id="main"></main>
+
+  <div id="lock" class="lock" hidden>
+    <form id="lockForm" class="lock-box">
+      <div class="label">Control panel locked</div>
+      <h2>Enter admin PIN</h2>
+      <input id="lockPin" type="password" inputmode="numeric" autocomplete="off" placeholder="PIN">
+      <div id="lockErr" class="err"></div>
+      <button class="btn primary" type="submit">Unlock</button>
+      <p class="hint">The display keeps running. Ask whoever set up this show for the PIN.</p>
+    </form>
+  </div>
+
+  <div id="ask" class="lock" hidden>
+    <form id="askForm" class="lock-box" method="dialog">
+      <div class="label">Confirm</div>
+      <p id="askMsg" style="margin:0;font-size:17px;line-height:1.4"></p>
+      <div class="row" style="justify-content:flex-end;margin-top:6px">
+        <button type="button" class="btn ghost" id="askNo">Cancel</button>
+        <button type="submit" class="btn primary" id="askYes">Continue</button>
+      </div>
+    </form>
+  </div>
+
+  <div id="toast" class="toast" hidden></div>
+  <script type="module" src="js/admin.js"></script>
+</body>
+</html>

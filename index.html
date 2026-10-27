@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+  <title>Field Slate</title>
+  <meta name="description" content="Announcer slate: who's on, who's next, and the notes that matter.">
+  <meta name="theme-color" content="#07090C">
+  <!-- iPad / iPhone: launched from the Home Screen this runs edge-to-edge with no Safari chrome -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Field Slate">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/display.css">
+</head>
+<body class="display">
+  <div id="slate" class="slate">
+    <header class="bar">
+      <div class="bar-l">
+        <span class="mark" aria-hidden="true"></span>
+        <span id="eventName" class="ev"></span>
+        <span id="roundSep" class="sep">/</span>
+        <span id="roundName" class="rd"></span>
+      </div>
+      <div class="bar-r">
+        <span id="offset" class="tag warn" hidden></span>
+        <span id="conn" class="tag conn" hidden></span>
+        <span id="clock" class="clock mono"></span>
+      </div>
+    </header>
+
+    <main class="stage">
+      <section class="feature">
+        <div class="meta">
+          <span id="phase" class="phase"></span>
+          <span id="ftime" class="ftime mono"></span>
+          <span class="grow"></span>
+          <span id="position" class="pos mono"></span>
+        </div>
+
+        <div class="namebox" id="namebox">
+          <h1 id="bandName" class="band"></h1>
+        </div>
+        <div id="bandSub" class="sub">
+          <span id="hometown" class="home"></span>
+          <span id="division" class="div mono"></span>
+        </div>
+
+        <div id="timer" class="timer">
+          <span id="countdown" class="count mono"></span>
+          <span id="countLabel" class="label"></span>
+          <div class="track"><i id="trackFill"></i></div>
+        </div>
+
+        <div id="notes" class="notes">
+          <div class="label">Notes</div>
+          <ul id="noteList"></ul>
+        </div>
+      </section>
+
+      <aside id="deck" class="deck">
+        <div class="deck-head"><span class="label">On deck</span><span class="rule"></span></div>
+        <ol id="deckList"></ol>
+      </aside>
+    </main>
+
+    <div id="banner" class="banner" hidden></div>
+
+    <div id="hold" class="cover" hidden>
+      <div class="cover-inner">
+        <div class="label" id="holdLabel">Standby</div>
+        <div id="holdMsg" class="cover-msg"></div>
+        <div id="holdEvent" class="cover-sub"></div>
+      </div>
+    </div>
+
+    <div id="empty" class="cover" hidden>
+      <div class="cover-inner">
+        <div class="label" id="emptyLabel">No schedule loaded</div>
+        <div class="cover-msg" id="emptyMsg">Field Slate</div>
+        <div class="cover-sub" id="emptySub">Open the control panel to add performances or connect CompetitionSuite.</div>
+      </div>
+    </div>
+  </div>
+
+  <nav id="chrome" class="chrome">
+    <button id="btnFull" type="button" title="Full screen (F)">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg>
+    </button>
+    <a id="btnAdmin" href="admin.html" title="Control panel">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 7h10M18 7h2M4 17h4M12 17h8"/><rect x="14" y="5" width="4" height="4"/><rect x="8" y="15" width="4" height="4"/></svg>
+    </a>
+  </nav>
+
+  <div id="iosHint" class="ios-hint" hidden>
+    <span>For true full screen on iPad: tap <b>Share</b> → <b>Add to Home Screen</b>, then open Field Slate from the Home Screen.</span>
+    <button id="iosHintClose" type="button">Dismiss</button>
+  </div>
+
+  <script type="module" src="js/display.js"></script>
+</body>
+</html>
